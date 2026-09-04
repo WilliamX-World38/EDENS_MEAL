@@ -4,23 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>eden's meal</title>
-  <link rel="icon" type="image/jpg" href="665091.jpg">
+  <title>Eden's Menu</title>
   <style>
   
-        * {    
+  
+          * {    
             margin: 0;
             padding: 0;
             list-style: none; /* Removes bullet points from lists */
-            text-decoration: none; /* Removes underlines from links */
+            text-decoration: non; /* Removes underlines from links */
             transition: 0.3s; /* Adds a transition effect to all properties */
             -webkit-touch-callout: none; /* Disables callout, tooltip appearing when touching and holding a touch target */
             -webkit-user-select: none; /* Disables text selection on Safari */
             user-select: none; /* Disables text selection */
             outline: none; /* Removes outline from elements */
         }
-   header{position: fixed; z-index:1000;top:0;left:0; height :12%;width:100%; background-color: #D3B8EC; text-align: center;align-items: center; padding:0px;border:1px solid green;margin-bottom:40px;}
+   header{position: fixed; z-index:1000;top:0;left:0; height :13%;width:100%; background-color: #D3B8EC; text-align: center;align-items: center; padding:0px;border:1px solid green;margin-bottom:40px;}
    
    h2{font-family: courier;color: blue;padding-top:20px;text-shadow: 3px 4px 1px #F4F4DC;text-align: center;animation: anim 10s ease-in-out infinite;}
    @keyframes anim{
@@ -38,37 +37,37 @@
    .me {left:0%}
    .color{color: white }
    
-  ul{font-size:20px;position: fixed; left:-100%; display:flex;flex-direction:column; width:50%; height:100vh; background-color: silver;justify-content: cente;align-items: cente; margin-top:40px}
-  a,li{padding:10px}
+  ul{font-size:20px;position: fixed; left:-100%; display:flex;flex-direction:column; width:50%; height:100vh; background-color: silver;justify-content: cente;align-items: cente; margin-top:40px;border-right:1px solid green}
+  a,li{padding:10px;text-decoration:none;border:1px solid green;border-radius: 10px; margin:5px}
   
   a:hover{padding-left:30px; background-color: white; color:red;}
   
-  #logo{position: fixed;top:10px; left:5px}
+  #logo{position: fixed;top:10px; left:5px; z-index:1000}
   
   body{padding:10px;transition: 0.05s;}
   #cart{font-size:25px;position: fixed;bottom:80px; right:15px; background-color:gold; width:80px; height:40px; padding-top:10px;padding-left:5px;border:2px solid green;border-radius:10px}
   #cart:active{transform:scale(1.2);}
-  #greet{margin-top:60px;padding:20px;background-color: darksalmon;text-align: center;border:2px solid green;border-radius: 10px;animation:gret 1s linear infinite}
+  #greet{margin-top:60px;padding:20px;background-color: darksalmon;text-align: center;border:1px solid green;border-radius: 10px;animation:gret 1s linear infinite}
   
-  @keyframes gret{
-    0%{transform: translateX(0px)}
-   25%{transform:translateX(-5px);transform:rotate(1deg)}
-   50%{transform:translateX(px)}
-   75%{transform:translateX(5px);transform:rotate(-1deg)}
-   100%{transform: translateX(0px)}
-  }
   
-  .change{color: white;background-color: #333;}
-  img{border-radius: 10px;}
-  img:active{transform:scale(0.96);}
-
+  .change{color: white;background-color: black;}
+  
+  
+  
+   th{text-align: center }
+   td{border:1px solid white;border-radius:10px;padding-top:10px;padding-bottom:10px;text-align: center}
+   tr:nth-child(even){background-color: gold;text-align: center}
+   img{width:160px; height:180px;border-radius:10px;padding-top:5px;}
+   img:active{transform:scale(0.85);}
+   p{}
+   del{color:red}
+   ins{color:green}
   </style>
 </head>
 
-<body id="body">
- 
-  <header>
-       <img id="logo" src="logo.webp" alt="logo" width="70px" height="65px" >
+
+<header>
+       <img id="logo" src="logo.webp" alt="logo" style="width:70px;height:65px" >
 <h2>EDEN'S MEAL<br><small>-restaurant-</small></h2>
 
      <div id="menu" onclick="slide()">
@@ -78,42 +77,240 @@
   </div>
   </header>
     <ul id="demo">
-   <marquee><h3 style="color: dodgerblue; margin-top:35px; padding-left:5px;text-align: center">-Delight Meal, Delights Me!-</h3></marquee>
+   <marquee><h3 style="color: dodgerblue; margin-top:45px;margin-bottom:10px; padding-left:5px;text-align: center">-Delight Meal, Delights Me!-</h3></marquee>
    <hr>
     <a>🏠Home</a>
-    <a href="">🎁Eden's Menu </a>
     <a href="diy&Tips.html">💡DIY & TIPS</a>
     <a href="aboutUs.html">❓About Us</a>
     <a href="">☎️Contact Us</a>
     <li style="color: black" onclick="theme()">⚙️Theme  <span id="theme">ABC</span></li>
   </ul>
-  <div id="cart">🛒 0</div>
+  <div onclick="vmp()" id="cart">🛒 0</div>
   
-<h3 id="greet">Welcome to EDEN'S MEAL,lets start shopping!!!</h3><br><br>
-<h4 style="text-align: center">MARKET AVAILABLE</h4>
-  
-  <img onclick="items()" src="burger.webp" alt="665091.jpg" width="100%">
-  <p>BURGER:N1,800</p><br><br>
-  <img onclick="items()" src="fried_rice.webp" alt="fried_rice.png" width="100%">
-  <p>FRIED RICE:N2,500</p><br><br>
-  <img onclick="items()" src="meat_pie.webp" alt="meat_pie.png" width="100%">
-  <p>MEATPIE:N1,500</p><br><br>
-  <img onclick="items()" src="shawarma.webp" alt="shawarma.png" width="100%">
-  <p>SHAWARMA:N3,000</p><br><br>
-  <img onclick="items()" src="soft_drinks.webp" alt="soft_drinks.png" width="100%">
-  
-    <p>COKE:N500</p><br><br>
-   
-   <img onclick="items()" src="fried_riceII.webp" alt="fried_riceII.png" width="100%">
-   <p>J0LLOF RICE:N5,000</p><br><br>
-   
-   <img onclick="items()" src="noodles.webp" alt="noodles.png" width="100%">
-   <p>NOODLES:N1,200</p><br><br>
-   
-  
+<h3 id="greet">Welcome to EDEN'S MEAL,start shopping Now!!!</h3><br><br>
 
+
+<body id="body">
+  <table width="100%" height="50%" style="border-collapse:collapse;border-radius:10px"
+    <tr>
+    <th colspan="2">EDEN'S MENU</th>
+    </tr>
+    
+    <tr>
+    <td>Burger</td>
+    <td>Noodles</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img onclick="items()" src="burger.webp" alt="">
+        <br>
+      <p>N2,000 <del>N4,500</del> <ins>-55%</ins></p>
+   </td>
+      
+      <td>
+        <img onclick="items()" src="noodles.webp" alt="">
+        <br>
+        <p>N1,500 <del>N3,000</del><ins>-50%</ins></p>
+     </td>
+        
   
-  <script>
+    
+    </tr>
+    
+    <tr>
+      <td>Fried rice</td>
+      <td>Shawarma</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="fried_rice.webp" alt="">
+        <br>
+      <p>N5,000</p>
+      </td>
+      
+      <td>
+        <img src="shawarma.webp" alt="">
+        <br>
+      <p>N1,800</p>
+      </td>
+      
+      
+    </tr>
+    
+    <tr>
+      <td>Jollof rice</td>
+      <td>Meatpie</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="jollof_rice.webp" alt="">
+        <br>
+        
+      <p>N3,200</p>
+      </td>
+      
+      <td>
+       <img src="meat_pie.webp"  alt="">
+       <br>
+      <p>N2,100</p>
+      </td>
+      
+    </tr>
+    
+     <tr>
+       
+      <td>Hamburger</td>
+      <td>Tp pie</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="burgerII.webp" alt="">
+        <br>
+      <p>N1,400</p>
+   </td>
+      
+      <td>
+        <img src="meat_pieII.webp" alt="">
+        <br>
+        <p>N1,000</p>
+     </td>
+        
+    
+    </tr>
+    
+    <tr>
+      <td>Shawarma</td>
+      <td>Jollof rice</td>
+    </tr>
+    
+     <tr>
+      <td>
+        <img src="shawarmaII.webp"  alt="">
+        <br>
+      <p>N6,000</p>
+      </td>
+      
+      <td>
+        <img src="jollof_riceII.webp" alt="">
+        <br>
+      <p>N5,800</p>
+      </td>
+      
+      
+    </tr>
+    
+        <tr>
+    <td>Noodles</td>
+    <td>Burger</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="noodlesII.webp" alt="">
+        <br>
+      <p>N2,000</p>
+   </td>
+      
+      <td>
+        <img src="burgerIII.webp" alt="">
+        <br>
+        <p>N2,500</p>
+     </td>
+        
+    </tr>
+    
+    
+    <tr>
+    <td>Fried rice</td>
+    <td>Shawarma</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="fried_riceII.webp" alt="">
+        <br>
+      <p>N4,300</p>
+   </td>
+      
+      <td>
+        <img src="shawarmaIII.webp" alt="">
+        <br>
+        <p>N2,100</p>
+     </td>
+        
+    
+    </tr>
+    
+    <tr>
+      <td>Chinese rice</td>
+      <td>Soft drinks</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="fried_riceIII.webp"  alt="">
+        <br>
+      <p>N1,700</p>
+      </td>
+      
+      <td>
+        <img src="soft_drinks.webp" alt="">
+        <br>
+      <p>N850</p>
+      </td>
+      
+      
+    </tr>
+    
+    <tr>
+      <td>Okra soup</td>
+      <td>Water leaf soup</td>
+    </tr>
+    
+    <tr>
+      <td>
+        <img src="okra.webp" alt="">
+        <br>
+        
+      <p>N3,200</p>
+     </td>
+      
+      <td>
+       <img src="water_leaf.webp" alt="">
+       <br>
+      <p>N2,100</p>
+      </td>
+      
+    </tr>
+    
+  </table>
+  
+  
+<footer style="text-align: center; background-color:darksalmon;border-radius:10px;padding:10px; margin-top:100px">
+  <address>
+    Author:O.William Ogbuji<br>
+    Tel.+234 906 042 1454<br>
+
+<a href="mailto: ogbuji.liamx38@gmail.com">ogbuji.liamx38@gmail.com</a><br>
+
+ 
+
+Mon - Sat. 6:00am – 9:00pm<br>
+Bua Yeghe CSS,<br>
+P.O BOX 388 Kpor road,<br> Rivers State.<br>
+
+</address><br><br>
+
+CONNECT WITH US@:<br>
+<a href="#">WHATSAPP</a> <a href="#"> X</a> <a href="#"> INSTAGRAM</a> <a href="#"> FACEBOOK</a> <a href="#"> YOUTUBE</a><br>
+&copy 2026 Eden's Meal Restaurant.<br>All rights reserved.</footer>
+
+
+   <script>
   
     function slide(){
       document.getElementById("demo").classList.toggle("me");
@@ -124,27 +321,21 @@
       document.getElementById("theme").classList.toggle("color");
     }
     function prom(){
-      alert("Hello user, this website is still under development,we are sorry for any inconveniences you might encounter while using it.thanks for your understanding.");
+      alert("‼️Hello user, this website is still under development,we are sorry for any inconveniences you might encounter while using it.thanks for your understanding.‼️");
     }
-    setTimeout(prom,600000);
+    setTimeout(prom,30000);
+    
     let x=0;
+
     function items(){
       x+=1;
       document.getElementById("cart").innerHTML="🛒"+x;
     }
-  </script>
-  
-  <footer style="text-align: center; background-color:darksalmon;padding:10px;border-radius:10px;margin-top:100px">
-    <address>
+    function vmp(){
+      alert("🚫 Sorry this feature is not available   for now.our engineers are going to fix it as soon as possible.please come back, and try again later. 🚫");
+    }
     
-     Address:Bua Yeghe,CSS,<br>PO.BOX 388 Kpor road.<br>
-    </address>
-    <br>
-    <p>Author:O.William Ogbuji<br>
-    <a href="mailto:ogbuji.liamx38@gmail.com">ogbuji.liamx38@gmail.com</a><br>
-    &copy 2026 Eden's Meal Restaurant.All right reserved.
-    </p>
-  </footer>
+  </script>
   
 </body>
 
